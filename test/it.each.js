@@ -83,6 +83,11 @@ describe('it.each with testPerIteration: true', function () {
             this._runnable.title.should.endWith('1');
         });
     });
+
+    it.each([{title: 'failing case', expected: 2}], '%s', ['title'], function ({expected}) {
+        let answer = 1+2;
+        answer.should.eql(expected);
+    });
 });
 
 describe('it.each with testPerIteration: false', function () {
